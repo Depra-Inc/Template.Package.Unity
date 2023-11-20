@@ -8,6 +8,7 @@ on:
 
 jobs:
   deploy:
+    if: ${{github.event.created == false}}
     uses: Depra-Inc/Workflows/.github/workflows/cd-npm.yml@main
     secrets:
       node_auth_token: ${{secrets.NPM_AUTH_TOKEN}}
